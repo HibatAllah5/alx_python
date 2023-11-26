@@ -10,3 +10,4 @@ elif Last_digit < 6 and Last_digit != 0:
 else:
     print("Last digit of", number, "is", Last_digit, "and is 0")
 
+    

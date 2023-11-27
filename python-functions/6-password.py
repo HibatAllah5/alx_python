@@ -1,7 +1,7 @@
 def validate_password(password):
-    if len(password < 8):
-        return False
     if ' ' in password:
+        return False
+    if len(password) < 8:
         return False
     
     lower = any(char.islower() for char in password)
@@ -9,3 +9,4 @@ def validate_password(password):
     digit = any(char.isdigit() for char in password)
 
     return lower and upper and digit    
+

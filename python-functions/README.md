@@ -1,0 +1,1 @@
+Asalamo Alaikom everyone, in this new project, we are exepcted to work on Python programming in diferent tasks, and getting to know how to use it without the help of Google.

@@ -1,0 +1,1 @@
+ASALAMO ALAIKOM everyone, in this week's project, we are going to work on modules and functions of Python.

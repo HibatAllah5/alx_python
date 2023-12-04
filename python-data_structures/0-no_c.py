@@ -1,6 +1,7 @@
 #Function that removes all characters c and C from a string.
 def no_c(my_string):
-    str = input("Input a new string")
-
-    {ord(letter): None for letter in 'Cc'}
-    return str
+    new_string = " "
+    for letters in new_string:
+        if letters != "c" or letters != "C":
+            new_string += letters
+    return new_string

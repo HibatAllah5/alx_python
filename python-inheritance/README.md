@@ -1,0 +1,1 @@
+Asalamo Alaikom everyone, in this new project, we are exepcted to work on Python in inheritance.

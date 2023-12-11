@@ -2,7 +2,6 @@
 method.
 """
 
-
 class BaseGeometry():
     """Simple empty BaseGeometry class"""
 

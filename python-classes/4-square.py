@@ -1,13 +1,11 @@
 class Square:
     """Defines a square"""
+
     def __init__(self, size=0):
         """Initialises the data"""
         self.size = size
 
-    def area(self):
-        """Returns current square area"""
-        return self.__size**2
-
+    
     @property
     def size(self):
         """Getter method"""
@@ -22,13 +20,18 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    def area(self):
+        """Returns current square area"""
+        return (self.__size * self.__size)
+
+
     def my_print(self):
         """Prints the square"""
         if self.__size == 0:
-            print()
+            print("")
         else:
             for i in range(self.__size):
                 for j in range(self.__size):
                     print('#', end='')
-                print()
+                print("")
                 

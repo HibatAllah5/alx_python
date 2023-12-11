@@ -12,3 +12,13 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
+
+    def area(self):
+        """ Compute the area of a square
+            with the formula:
+                                area = @size ^ 2 = @size * @size
+            Return:
+                    Power of the Square size to 2
+                    or size multiplicated by size."""
+        return (self.__size ** 2)
+    

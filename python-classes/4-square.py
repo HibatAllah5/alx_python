@@ -17,7 +17,7 @@ class Square:
     def size(self):
         """ Getter for the field size as a property
             Return:
-                Value of size"""
+                    Value of size"""
         return (self.__size)
 
     @size.setter
@@ -38,6 +38,18 @@ class Square:
             with the formula:
                                 area = @size ^ 2 = @size * @size
             Return:
-                    Power of the Square size to 2 or
-                    size multiplicated by size."""
+                    Power of the Square size to 2
+                    or size multiplicated by size."""
         return (self.__size ** 2)
+
+    def my_print(self):
+        """ Prints a square using the character # in the standard output
+            or a blank line if @size is 0"""
+        if not self.size:
+            print()
+        else:
+            for row in range(self.__size):
+                for column in range(self.__size):
+                    print("#", end="")
+                print()
+                

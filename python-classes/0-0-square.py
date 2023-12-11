@@ -1,4 +1,4 @@
 class Square:
-    """Simple empty square class"""
-    pass
+      """Empty class that defines a square"""
+      pass
     

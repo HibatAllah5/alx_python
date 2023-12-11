@@ -1,8 +1,6 @@
 class Square:
-    """Simple square class with his size as a field"""
-
+    """Defines a square"""
     def __init__(self, size):
-        """ Instance the class Square
-            Arguments:
-                @size: the size of every side of the Square"""
+        """Initialises the data"""
         self.__size = size
+        

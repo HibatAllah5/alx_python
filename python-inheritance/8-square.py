@@ -1,19 +1,14 @@
-Rectangle = __import__('8-rectangle').Rectangle
+Rectangle = __import__('7-rectangle').Rectangle
 
+class Square(Rectangle):
+    """Represent a square."""
 
-class BaseGeometry():
-    """BaseGeometry class
-    """
-    def area(self):
-        """Raises an Exception
+    def __init__(self, size):
+        """Initialize a new square.
+
+        Args:
+            size (int): The size of the new square.
         """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates value
-        """
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-    
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size

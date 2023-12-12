@@ -24,4 +24,22 @@ class Rectangle(BaseGeometry):
         super().integer_validator('height', height)
         self.__width = width
         self.__height = height
-        
+
+    def area(self):
+        """Computes the Area of a Rectangle.
+        Based on the formula AreaRectangle = Height * Width
+
+        Returns:
+            {int} -- The integer value of the Rectangle's Area.
+        """
+        return self.__height * self.__width
+
+    def __str__(self):
+        """Generates a human readable string that represents the Rectangle
+
+        Returns:
+            {str} -- The string representation of the Rectangel using the #
+                        character, it represents a 2d rectangle.
+        """
+        return '[Rectangle] {:d}/{:d}'.format(self.__width, self.__height)
+    

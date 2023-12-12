@@ -21,6 +21,8 @@ class Square(Rectangle):
         """
         super().integer_validator('size', size)
         super().__init__(size, size)
+        self.__width = size
+        self.__height = size
         self.__size = size
 
     def area(self):
@@ -30,5 +32,14 @@ class Square(Rectangle):
             Return:
                     Power of the Square size to 2 or
                     size multiplicated by size."""
-        return self.__size ** 2
+        return self.__size**2
+
+    def __str__(self):
+        """Generates a human readable string that represents the Rectangle
+
+        Returns:
+            {str} -- The string representation of the Rectangel using the #
+                        character, it represents a 2d rectangle.
+        """
+        return '[Square] {:d}/{:d}'.format(self.__width, self.__height)
     

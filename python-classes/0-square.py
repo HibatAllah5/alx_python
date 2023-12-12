@@ -9,5 +9,6 @@ class Square:
         """
 
         self.__size = size
-        return type(self)  is size
-            
+        
+    def dir(cls):
+        return [attribute for  attribute in super().dir() if attribute != "init_subclass"] 

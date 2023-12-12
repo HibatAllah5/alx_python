@@ -1,4 +1,4 @@
-class BaseGeometry:
-    """Empty class
-    """
+"""Empty class
+"""
+class BaseGeometry():
     pass

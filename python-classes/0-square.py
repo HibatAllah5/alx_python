@@ -9,4 +9,5 @@ class Square:
         """
 
         self.__size = size
-        
+        return type(self)  is size
+            

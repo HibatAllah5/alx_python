@@ -1,9 +1,9 @@
-class Square:
-    """Defines a square"""
-
+"""Defines a square"""
+class Square():
+    """Define a private attribute size"""
+    
+    """Initialises the data"""
     def __init__(self, size=0):
-        """Initialises the data"""
-
         
         if type(size) != int:
             raise TypeError("size must be an integer")

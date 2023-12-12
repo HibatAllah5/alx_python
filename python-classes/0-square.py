@@ -1,4 +1,4 @@
-class Square:
+class _square:
     """Defines a square"""
 
     def __init__(self, size):
@@ -9,3 +9,6 @@ class Square:
         """
 
         self.__size = size
+
+        return type(self) is size
+    

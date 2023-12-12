@@ -3,6 +3,8 @@
 
 BaseGeometry = __import__('3-base_geometry').BaseGeometry
 
+"""Simple empty BaseGeometry class"""
 class BaseGeometry:
-    """Simple empty BaseGeometry class"""
+    
     pass
+

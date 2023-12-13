@@ -3,15 +3,11 @@ method.
 """
 
 
+"""Simple empty BaseGeometry class"""
 class BaseGeometry():
-    """Simple empty BaseGeometry class"""
-
+    
+    """Prototype of the area function that actually isn't implemented.
+    """
     def area(self):
-        """Prototype of the area function that actually isn't implemented.
-
-        Raises:
-            Exception:  a simple exception that tells that the area function is
-                        not implmenet yet.
-        """
         raise Exception('area() is not implemented')
     

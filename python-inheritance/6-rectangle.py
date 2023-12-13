@@ -1,24 +1,19 @@
 """Simple module with a Rectangle class that inherits BaseGeometry.
 """
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+BaseGeometry = __import__('5_base_geometry').BaseGeometry
 
 
+
+"""Simple class Rectangle with width, height and input validation.
+"""
 class Rectangle(BaseGeometry):
-    """Simple class Rectangle with width, height and input validation.
+
+    
+    """Initialize the rectangle after checking if the values passed are
+    valid integers using it's superclass method.
     """
-
     def __init__(self, width, height):
-        """Initialize the rectangle after checking if the values passed are
-        valid integers using it's superclass method.
 
-        Arguments:
-            width   {int}   --  a positive non zero integer.
-            height  {int}   --  a positive non zero integer.
-
-        Raises:
-            TypeError:  if any value is not an integer.
-            ValueError: if any value is an integer less or equal to zero.
-        """
         super().__init__()
         super().integer_validator('width', width)
         super().integer_validator('height', height)

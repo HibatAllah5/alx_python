@@ -1,8 +1,18 @@
-"""Simple empty BaseGeometry class.
 """
+    BaseGeometry module
+"""
+
+
 class BaseGeometry():
-    """Raises Exception"""
+    """
+        BaseGeometry Class
+    """
     def area(self):
-        raise Exception('area() is not implemented')
-    
+        """
+            public instance
+            Raise:
+                Exception: Area not implemented
+
+        """
+        raise Exception("area() is not implemented")
     

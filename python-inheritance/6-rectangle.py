@@ -1,7 +1,8 @@
-"""Simple class Rectangle with width, height and input validation.
+"""Simple class Rectangle that inherits from BaseGeometry.
 """
-class Rectangle():
+BaseGeometry = __import__("5_base_geometry").BaseGeometry
 
+class Rectangle(BaseGeometry):
     """Initialize the rectangle 
     """
     def __init__(self, width, height):

@@ -2,8 +2,6 @@
 """
 BaseGeometry = __import__('5_base_geometry').BaseGeometry
 
-
-
 """Simple class Rectangle with width, height and input validation.
 """
 class Rectangle(BaseGeometry):

@@ -6,8 +6,7 @@ class Rectangle():
     """
 
     def __init__(self, width, height):
-        """Initialize the rectangle after checking if the values passed are
-        valid integers using it's superclass method.
+        """Initialize the rectangle 
         """
         super().__init__()
         super().integer_validator('width', width)
@@ -15,13 +14,15 @@ class Rectangle():
         self.__width = width
         self.__height = height
 
-    def area(self):
+    
         """Computes the Area of a Rectangle.
         """
+    def area(self):
         return self.__height * self.__width
 
+    
+    """Generates a human readable string that represents the Rectangle
+    """
     def __str__(self):
-        """Generates a human readable string that represents the Rectangle
-        """
         return '[Rectangle] {:d}/{:d}'.format(self.__width, self.__height)
     

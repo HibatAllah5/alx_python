@@ -1,13 +1,8 @@
-"""Simple module with a Rectangle class that inherits BaseGeometry.
-"""
-
 """Simple class Rectangle with width, height and input validation.
 """
 class Rectangle():
 
-    
-    """Initialize the rectangle after checking if the values passed are
-    valid integers using it's superclass method.
+    """Initialize the rectangle 
     """
     def __init__(self, width, height):
 

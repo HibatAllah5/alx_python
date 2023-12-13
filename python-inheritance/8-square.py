@@ -1,7 +1,5 @@
-"""Defines a Rectangle subclass Square."""
+"""Simple module with a Square class that inherits Rectangle"""
 
-
-"""Represent a square."""
 class Square():
 
     """Initialize a new square.
@@ -13,7 +11,7 @@ class Square():
         super().__init__(size, size)
         self.__size = size
 
-    def __area__(self):
-        """Compute the area of a square
-        """
+    """Compute the area of a square
+    """
+    def __area__(self):   
         return self.__size ** 2

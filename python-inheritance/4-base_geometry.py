@@ -1,8 +1,7 @@
 
 """Simple empty BaseGeometry class"""
 class BaseGeometry():
-    pass
-    
+
 
     """Raises an Exception
     """

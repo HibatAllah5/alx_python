@@ -1,10 +1,9 @@
 """Simple module with a Rectangle class that inherits BaseGeometry.
 """
-BaseGeometry = __import__('5_base_geometry').BaseGeometry
 
 """Simple class Rectangle with width, height and input validation.
 """
-class Rectangle(BaseGeometry):
+class Rectangle():
 
     
     """Initialize the rectangle after checking if the values passed are

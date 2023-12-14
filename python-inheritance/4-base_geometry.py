@@ -2,17 +2,12 @@
     BaseGeometry module
 """
 
-
+"""BaseGeometry Class
+"""
 class BaseGeometry():
-    """
-        BaseGeometry Class
+    
+    """Raises Exception: Area not implemented
     """
     def area(self):
-        """
-            public instance
-            Raise:
-                Exception: Area not implemented
-
-        """
         raise Exception("area() is not implemented")
     

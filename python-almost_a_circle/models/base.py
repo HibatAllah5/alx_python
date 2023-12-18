@@ -1,4 +1,6 @@
 #Module for Base class
+import json
+
 class Base:
 #Representation of the Base 
     __nb_objects = 0

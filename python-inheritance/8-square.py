@@ -13,7 +13,7 @@ class Square(Rectangle):
             Initialize the square base on Rectangle
         """
         self.__size = size
-        self.integer_validator('size', self.__size)
+        self.integer_validator('size', size)
 
     def area(self):
         """

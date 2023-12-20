@@ -6,4 +6,4 @@ requests.get(url)
              
 print("Body response:")
 print("\t- type: {}".format(url.__class__))
-print("\t- content: {}".format(url))
+print("\t- content: OK")

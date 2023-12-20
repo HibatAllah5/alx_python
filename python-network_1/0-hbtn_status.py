@@ -1,10 +1,10 @@
 """Fetches https://alu-intranet.hbtn.io/status"""
 
 if __name__ == "__main__":
-    from requests import requests
+    import requests 
 
     req = requests('https://alu-intranet.hbtn.io/status')
-    with requests.requests("https://alu-intranet.hbtn.io/status") as f:
+    with requests("https://alu-intranet.hbtn.io/status") as f:
         status = f.read()
         print("Body response:\n"
               "\t- type: {}\n"

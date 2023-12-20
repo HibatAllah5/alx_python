@@ -1,8 +1,8 @@
-"""Fetches https://intranet.hbtn.io/status"""
+"""Fetches https://alu-intranet.hbtn.io/status"""
 if __name__ == "__main__":
     from urllib import requests
 
-    with requests.urlopen("https://intranet.hbtn.io/status") as f:
+    with requests.urlopen("https://alu-intranet.hbtn.io/status") as f:
         status = f.read()
         print("Body response:\n"
               "\t- type: {}\n"

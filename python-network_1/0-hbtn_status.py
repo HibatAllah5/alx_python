@@ -1,7 +1,7 @@
 """Script that fetches https://intranet.hbtn.io/status and
 prints information about the body of the response retrieved.
 """
-from urllib.request import (urlopen, Request)
+from requests import (urlopen, Request)
 
 
 if __name__ == "__main__":
@@ -13,5 +13,5 @@ if __name__ == "__main__":
         print('\t- type: {}'.format(type(data)))
         print('\t- content: {}'.format(data))
         print('\t- utf8 content: {}'.format(data.decode('utf-8')))
-        
+
         

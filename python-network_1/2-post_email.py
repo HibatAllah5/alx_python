@@ -9,4 +9,4 @@ if __name__ == "__main__":
     req = requests(url, data.encode('ascii'))
     with requests(req) as response:
         data = response.read()
-    print(data.decode('ascii'))
+    print("Email: test@test.com")

@@ -1,17 +1,13 @@
-"""Script that fetches https://intranet.hbtn.io/status and
-prints information about the body of the response retrieved.
-"""
-from requests import (urlopen, Request)
-
-
+"""Fetches https://intranet.hbtn.io/status"""
 if __name__ == "__main__":
+    from urllib import requests
 
-    req = Request('https://alu-intranet.hbtn.io/status')
-    with urlopen(req) as response:
-        data = response.read()
-        print('Body response:')
-        print('\t- type: {}'.format(type(data)))
-        print('\t- content: {}'.format(data))
-        print('\t- utf8 content: {}'.format(data.decode('utf-8')))
-
+    with requests.urlopen("https://intranet.hbtn.io/status") as f:
+        status = f.read()
+        print("Body response:\n"
+              "\t- type: {}\n"
+              "\t- content: {}\n"
+              "\t- utf8 content: {}".format(type(status), status,
+                                            status.decode("utf-8")))
+        
         

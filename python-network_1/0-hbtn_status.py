@@ -1,10 +1,9 @@
-"""Fetches holberton/ statue page"""
 import requests
 
-if __name__ == "__main__":
-    r = requests.get("https://alu-intranet.hbtn.io/status")
-    with (r) as response:
-        data = response.read()
-        print('Body response:')
-        print('\t- type: {}'.format(type(data)))
-        print('\t- content: {}'.format(data))
+url = "https://alu-intranet.hbtn.io/status"
+
+requests.get(url)
+             
+print("Body response:\n"
+      "\t- type: {}\n"
+      "\t- content: {}\n")

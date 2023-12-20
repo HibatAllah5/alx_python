@@ -1,9 +1,12 @@
-"""Takes in URL and email, sends POST request using given parameters, displays
-body of response decoded in utf-8"""
-if __name__ == "__main__":
-    from requests import requests
-    from sys import argv
+import requests
+import sys 
 
-    with requests.requests(argv[1]) as f:
-        print(f.info().get("X_Request_Id"))
-        
+if __name__ == "__main__":
+
+    url = sys.argv[1]
+    value = {"email": sys.argv[2]}
+    data = requests(value)
+    req = requests(url, data.encode('ascii'))
+    with requests(req) as response:
+        data = response.read()
+    print(data.decode('ascii'))

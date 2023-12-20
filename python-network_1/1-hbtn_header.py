@@ -1,9 +1,9 @@
-"""Takes in URL and email, sends POST request using given parameters, displays
-body of response decoded in utf-8"""
-
+"""Takes in URL, sends request, displays value of X-Request-Id found in header
+"""
 if __name__ == "__main__":
-    import requests 
+    import requests
     from sys import argv
 
     with requests(argv[1]) as f:
-        print(f.info().get('X_Request_Id'))
+        print(f.info().get("X-Request-Id"))
+        

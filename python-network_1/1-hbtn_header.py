@@ -1,8 +1,10 @@
-if __name__ == '__main__':
-   import requests
-   import sys 
+import requests
+import sys 
 
-   with requests(sys.argv[1]) as response:
-       content = response.getheader('X_Request_Id')
+url=  "https://alu-intranet.hbtn.io/status"
 
-   print(content)
+request_headers = {'X-Request-Id'}
+
+response= requests.get(url=url, headers= request_headers)
+
+print(response.headers)

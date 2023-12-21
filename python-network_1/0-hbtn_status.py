@@ -1,9 +1,9 @@
+"""Fetches https://alu-intranet.hbtn.io/status."""
 import requests
 
-url = "https://alu-intranet.hbtn.io/status"
 
-requests.get(url)
-             
-print("Body response:")
-print("\t- type: {}".format(url.__class__))
-print("\t- content: OK")
+if __name__ == "__main__":
+    r = requests.get("https://alu-intranet.hbtn.io/status")
+    print("Body response:")
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))

@@ -1,10 +1,12 @@
+"""Displays the X-Request-Id header variable of a request to a given URL.
+"""
+import sys
 import requests
-import sys 
 
-url=  "https://alu-intranet.hbtn.io/status"
 
-request_headers = {'X-Request-Id'}
+if __name__ == "__main__":
+    url = sys.argv[1]
 
-response= requests.get(url=url, headers= request_headers)
-
-print(response.headers)
+    r = requests.get(url)
+    print(r.headers.get("X-Request-Id"))
+    

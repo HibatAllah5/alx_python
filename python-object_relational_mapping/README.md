@@ -1,0 +1,1 @@
+Hello, in this project we are going to work on Python Object-relational mapping.

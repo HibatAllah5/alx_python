@@ -64,4 +64,3 @@ if __name__ == "__main__":
         sys.exit(1)
 
     user_info(int(sys.argv[1]))
-    

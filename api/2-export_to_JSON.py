@@ -1,7 +1,6 @@
 import json
 import requests
 import sys
-"""import json, requests, sys"""
 
 
 def getData(id):
@@ -38,4 +37,3 @@ if __name__ == "__main__":
     else:
         id = 1
     getData(int(id))
-    

@@ -1,42 +1,33 @@
-import requests
 import json
+import requests
 
-def get_employee_data(employee_id):
-    employee_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    employee_response = requests.get(employee_url)
-    employee_data = employee_response.json()
-    return employee_data
+def getData():
+    """
+    Get data from json api and export to json file
+    """
+    usersurl = "https://jsonplaceholder.typicode.com/users"
 
-def get_employee_todos(employee_id):
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-    todos_response = requests.get(todos_url)
-    todos_data = todos_response.json()
-    return todos_data
+    request1 = requests.get(usersurl)
+    results = request1.json()
 
-def display_employee_todo_progress(employee_id):
-    employee_data = get_employee_data(employee_id)
-    employee_name = employee_data["name"]
-    todos_data = get_employee_todos(employee_id)
-    
-    employee_tasks = []
-    for task in todos_data:
-        task_info = {
-            "username": employee_name,
-            "task": task["title"],
-            "completed": task["completed"]
-        }
-        employee_tasks.append(task_info)
-    
-    return employee_tasks
+    alldata = {}
+
+    for result in results:
+        username = result['username']
+        userid = result['id']
+        todourl = "https://jsonplaceholder.typicode.com/users/{}/todos".format(userid)
+        request2 = requests.get(todourl)
+        tasks = request2.json()
+        jsondata = [
+                {"username": username, "task": task['title'], "completed": task['completed']}
+                for task in tasks
+            ]
+        
+        alldata[str(userid)] = jsondata
+
+    with open("todo_all_employees.json", "w") as jsonfile:
+        json.dump(alldata, jsonfile)
+
 
 if __name__ == "__main__":
-    all_employees_tasks = {}
-    
-    for employee_id in range(1, 11):
-        employee_tasks = display_employee_todo_progress(employee_id)
-        all_employees_tasks[str(employee_id)] = employee_tasks
-
-
-    with open('todo_all_employees.json', 'w') as json_file:
-        json.dump(all_employees_tasks, json_file, indent=2)
-        
+    getData()

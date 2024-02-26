@@ -1,66 +1,52 @@
+"""fetching employee,TODO lists and counting completed tasks
+"""
+
 import csv
 import requests
 import sys
 
-users_url = "https://jsonplaceholder.typicode.com/users?id="
-todos_url = "https://jsonplaceholder.typicode.com/todos"
+def fetch_user_info(user_id):
+    url = 'https://jsonplaceholder.typicode.com/'
+    user_url = '{}users/{}'.format(url, user_id)
+    response = requests.get(user_url)
+    user_info = response.json()
+    return user_info
 
 
-def export_to_csv(id):
-    """ Export user tasks to CSV """
+def fetch_user_todos(user_id):
+    url = 'https://jsonplaceholder.typicode.com/'
+    todos_url = '{}todos?userId={}'.format(url, user_id)
+    response = requests.get(todos_url)
+    todos = response.json()
+    return todos
 
-    employee_url = f'https://jsonplaceholder.typicode.com/users/{id}'
-    response = requests.get(employee_url)
-    employee_data = response.json()
 
-    todo_url = f'https://jsonplaceholder.typicode.com/users/{id}/todos'
-    response = requests.get(todo_url)
-    todo_data = response.json()
-
-    filename = f'{id}.csv'
-
+def export_to_csv(user_id, user_info, todos):
+    filename = '{}.csv'.format(user_id)
     with open(filename, 'w', newline='') as csvfile:
-        fieldnames = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
+        fieldnames = ['USER_ID', 'USERNAME',
+                      'TASK_COMPLETED_STATUS', 'TASK_TITLE']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
         writer.writeheader()
-        for task in todo_data:
+
+        for todo in todos:
             writer.writerow({
-                "USER_ID": id,
-                "USERNAME": employee_data['name'],
-                "TASK_COMPLETED_STATUS": str(task['completed']),
-                "TASK_TITLE": task['title']
+                'USER_ID': user_id,
+                'USERNAME': user_info['username'],
+                'TASK_COMPLETED_STATUS': 'Completed' if todo['completed'] else 'Incomplete',
+                'TASK_TITLE': todo['title']
             })
-
-    print(f"{filename} created successfully.")
-    
-
-def user_info(id):
-    """ Check user information """
-
-    export_to_csv(id)
-
-    total_tasks = 0
-    response = requests.get(todos_url).json()
-    for i in response:
-        if i['userId'] == id:
-            total_tasks += 1
-
-    num_lines = 0
-    with open(str(id) + ".csv", 'r') as f:
-        for line in f:
-            if not line == '\n':
-                num_lines += 1
-
-    if total_tasks == num_lines - 1:
-        print("Number of tasks in CSV: OK")
-    else:
-        print("Number of tasks in CSV: Incorrect")
+    print(f"CSV file '{filename}' has been created successfully.")
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python3 script_name.py <employee_id>")
+        print("Usage: python script.py <user_id>")
         sys.exit(1)
 
-    user_info(int(sys.argv[1]))
+    user_id = sys.argv[1]
+    user_info = fetch_user_info(user_id)
+    todos = fetch_user_todos(user_id)
+    export_to_csv(user_id, user_info, todos)
+    

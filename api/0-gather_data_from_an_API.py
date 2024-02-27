@@ -1,34 +1,23 @@
 import requests
 import sys
 
+id = sys.argv[1]
 
-def getData(id):
-    usersurl = "https://jsonplaceholder.typicode.com/users/{}".format(id)
-    request1 = requests.get(usersurl)
-    result = request1.json()
-    name = result['name']
-    todourl = "{}/todos".format(usersurl)
-    request2 = requests.get(todourl)
-    results = request2.json()
+request_user = requests.get('https://jsonplaceholder.typicode.com/users/'+id)
+request_todos = requests.get('https://jsonplaceholder.typicode.com/users/'+id+'/todos')
 
-    tasksTitles = []
-    count = 0
-    for result in results:
-        if result['completed']:
-            count += 1
-            tasksTitles.append(result['title'])
-    
+data_user = request_user.json()
+data_todos = request_todos.json()
+
+completed = 0
+
+for i in data_todos:
+    if i.get('completed')==True:
+        completed = completed + 1
+
+print ('Employee {} is done with tasks({}/{}):'.format(data_user.get('name'), completed,len(data_todos)))
+
+for item in data_todos:
+    if item.get('completed') == True:
+        print('\t ' + item.get('title')) 
         
-    print("Employee {} is done with tasks({}/{}):".format(name, count, len(results)))
-    for task in tasksTitles:
-        print("\t {}".format(task))
-
-
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        id = sys.argv[1]
-    else:
-        id = 1
-    getData(id)
-    
-    
